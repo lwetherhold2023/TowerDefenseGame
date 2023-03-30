@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class Bandit {
+// Bandit Class inherits from Peasant Class
+public class Bandit extends Peasant {
 }

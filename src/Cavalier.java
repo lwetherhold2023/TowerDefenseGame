@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class Cavalier {
+// Cavalier Class inherits from Archer Class
+public class Cavalier extends Archer {
 }
