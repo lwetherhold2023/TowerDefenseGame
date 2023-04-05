@@ -40,44 +40,104 @@ public class Wave {
     }
 
     // set wave
+    public void setWave(int wave) {
+        this.wave = wave;
+    }
 
     // get wave
+    public int getWave() {
+        return this.wave;
+    }
 
     // set enemies (RANDOM NUMBER EACH TYPE BASED ON WAVE # AND LEVELED BY INHERITANCE STRUCTURE
+    public void setEnemies(int enemies) {
+        this.enemies = enemies;
+    }
 
     // get enemies
+    public int getEnemies() {
+        return this.enemies;
+    }
 
     // set peasants
+    public void setPeasants(int peasants) {
+        this.peasants = peasants;
+    }
 
     // get peasants
+    public int getPeasants() {
+        return this.peasants;
+    }
 
     // set bandits
+    public void setBandits(int bandits) {
+        this.bandits = bandits;
+    }
 
     // get bandits
+    public int getBandits() {
+        return this.bandits;
+    }
 
     // set knights
+    public void setKnights(int knights) {
+        this.knights = knights;
+    }
 
     // get knights
+    public int getKnights() {
+        return this.knights;
+    }
 
     // set archers
+    public void setArchers(int archers) {
+        this.archers = archers;
+    }
 
     // get archers
+    public int getArchers() {
+        return this.archers;
+    }
 
     // set cavaliers
+    public void setCavaliers(int cavaliers) {
+        this.cavaliers = cavaliers;
+    }
 
     // get cavaliers
+    public int getCavaliers() {
+        return this.cavaliers;
+    }
 
     // set alchemists
+    public void setAlchemists(int alchemists) {
+        this.alchemists = alchemists;
+    }
 
     // get alchemists
+    public int getAlchemists() {
+        return this.alchemists;
+    }
 
     // set monks
+    public void setMonks(int monks) {
+        this.monks = monks;
+    }
 
     // get monks
+    public int getMonks() {
+        return this.monks;
+    }
 
     // set priests
+    public void setPriests(int priests) {
+        this.priests = priests;
+    }
 
     // get priests
+    public int getPriests() {
+        return this.priests;
+    }
 
     // according to number of each enemy type, enemies are created
     public void create() {
