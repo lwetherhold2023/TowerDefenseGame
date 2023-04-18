@@ -149,6 +149,15 @@ public class Wave {
 
     // toString method
     public String toString() {
-        return "";
+        return "Wave: \t\t\t" + this.getWave() + "\n" +
+               "Enemies: \t\t\t" + this.getEnemies() + "\n" +
+                  "Peasants: \t\t\t\t" + this.getPeasants() + "\n" +
+                  "Bandits: \t\t\t\t" + this.getBandits() + "\n" +
+                  "Knights: \t\t\t\t" + this.getKnights() + "\n" +
+                  "Archers: \t\t\t\t" + this.getArchers() + "\n" +
+                  "Cavaliers: \t\t\t\t" + this.getCavaliers() + "\n" +
+                  "Alchemists: \t\t\t\t" + this.getAlchemists() + "\n" +
+                  "Monks: \t\t\t\t" + this.getMonks() + "\n" +
+                  "Priests: \t\t\t\t" + this.getPriests() + "\n";
     }
 }

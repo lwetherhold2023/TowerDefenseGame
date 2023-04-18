@@ -17,11 +17,21 @@ public class Thatch extends Tower {
     }
 
     // set flammability
+    public void setFlammability(int flammability) {
+        this.flammability = flammability;
+    }
 
     // get flammability
+    public int getFlammability() {
+        return this.flammability;
+    }
 
     // get armor
     // overrides the super getArmor method
+    @Override
+    public double getArmor() {
+        return super.getArmor();
+    }
 
     // sleep method provides an armor buff and causes enemies to become sleepy
     public void sleep() {
@@ -30,6 +40,6 @@ public class Thatch extends Tower {
     // toString method
     // uses the super toString, as well as adding the new variables to it
     public String toString() {
-        return super.toString() + "";
+        return super.toString() + "Flammability (0-10): \t\t\t" + this.getFlammability() + "\n";
     }
 }

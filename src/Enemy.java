@@ -76,6 +76,10 @@ public class Enemy {
 
     // toString method
     public String toString() {
-        return "Element: \t\t\t" + this.getElement() + "\n";
+        return "Element: \t\t\t" + this.getElement() + "\n" +
+               "Turns: \t\t\t" + this.getTurns() + "\n" +
+               "Health: \t\t\t" + this.getHealth() + "\n" +
+               "Damage: \t\t\t" + this.getDamage() + "\n" +
+               "Speed: \t\t\t" + this.getSpeed() + "\n";
     }
 }

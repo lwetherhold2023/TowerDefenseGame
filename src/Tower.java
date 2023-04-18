@@ -60,6 +60,16 @@ public class Tower {
         return this.damage;
     }
 
+    // set defense
+    public void setDefense(double defense) {
+        this.defense = defense;
+    }
+
+    // get defense
+    public double getDefense() {
+        return this.defense;
+    }
+
     // set armor
     public void setArmor(double armor) {
         this.armor = armor;
@@ -96,6 +106,11 @@ public class Tower {
 
     // toString method
     public String toString() {
-        return "Health: \t\t\t" + this.getHealth() + "\n";
+        return "Health: \t\t\t" + this.getHealth() + "\n" +
+               "Damage: \t\t\t" + this.getDamage() + "\n" +
+               "Defense: \t\t\t" + this.getDefense() + "\n" +
+               "Armor: \t\t\t" + this.getArmor() + "\n" +
+               "Range: \t\t\t" + this.getRange() + "\n" +
+               "Fire Rate: \t\t\t" + this.getFireRate() + "\n";
     }
 }
