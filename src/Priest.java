@@ -13,7 +13,7 @@ public class Priest extends Monk {
 
     // class constructor - alternate
     public Priest(String element, int turns, double health, double damage, double speed,
-                double agility, double strength,
+                  double agility, double strength,
                 int items,
                 int eucharists) {
         super(element, turns, health, damage, speed, agility, strength, items); // uses the super constructor

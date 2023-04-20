@@ -1,5 +1,12 @@
+import java.util.Random;
+
 public class Wave {
+    // set up random number generator
+    Random random = new Random();
+
     // set up variables
+    public double waveHealth = 0;
+    public double waveDamage = 0;
     private int wave;
     private int enemies;
     private int peasants;
@@ -15,28 +22,12 @@ public class Wave {
     public Wave() {
         this.wave = 0;
         this.enemies = 0;
-        this.peasants = 0;
-        this.bandits = 0;
-        this.knights = 0;
-        this.archers = 0;
-        this.cavaliers = 0;
-        this.alchemists = 0;
-        this.monks = 0;
-        this.priests = 0;
     }
 
     // class constructor - alternate
-    public Wave(int wave, int enemies, int peasants, int bandits, int knights, int archers, int cavaliers, int alchemists, int monks, int priests) {
+    public Wave(int wave, int enemies) {
         this.wave = wave;
         this.enemies = enemies;
-        this.peasants = peasants;
-        this.bandits = bandits;
-        this.knights = knights;
-        this.archers = archers;
-        this.cavaliers = cavaliers;
-        this.alchemists = alchemists;
-        this.monks = monks;
-        this.priests = priests;
     }
 
     // set wave
@@ -52,6 +43,11 @@ public class Wave {
     // set enemies (RANDOM NUMBER EACH TYPE BASED ON WAVE # AND LEVELED BY INHERITANCE STRUCTURE
     public void setEnemies(int enemies) {
         this.enemies = enemies;
+        if (wave < 1) {
+            int max = 5;
+            knights = random.nextInt(max + 1);
+            peasants = max - knights;
+        }
     }
 
     // get enemies
@@ -61,7 +57,15 @@ public class Wave {
 
     // set peasants
     public void setPeasants(int peasants) {
-        this.peasants = peasants;
+        for (int i = 0; i < peasants; i++) {
+            Enemy peasant = new Peasant("", 0, 0.0, 0.0, 0.0,
+                    0.0, 0.0);
+            ((Peasant)peasant).beg();
+            waveHealth += peasant.getHealth();
+            waveDamage += peasant.getDamage();
+            System.out.print(peasant);
+            System.out.print("\n\n");
+        }
     }
 
     // get peasants
@@ -141,6 +145,41 @@ public class Wave {
 
     // according to number of each enemy type, enemies are created
     public void create() {
+        ///////////////////////////////////////////////
+        // PEASANTS
+        //////////////////////////////////////////////
+        setPeasants(peasants);
+
+        ///////////////////////////////////////////////
+        // BANDITS
+        //////////////////////////////////////////////
+
+        ///////////////////////////////////////////////
+        // KNIGHTS
+        //////////////////////////////////////////////
+
+        ///////////////////////////////////////////////
+        // ARCHERS
+        //////////////////////////////////////////////
+
+        ///////////////////////////////////////////////
+        // CAVALIERS
+        //////////////////////////////////////////////
+
+        ///////////////////////////////////////////////
+        // ALCHEMISTS
+        //////////////////////////////////////////////
+
+        ///////////////////////////////////////////////
+        // MONKS
+        //////////////////////////////////////////////
+
+        ///////////////////////////////////////////////
+        // PRIESTS
+        //////////////////////////////////////////////
+
+        System.out.println(waveHealth);
+        System.out.println(waveDamage);
     }
 
     // attack method represents an enemy wave attacking the towers (total attack pool and modified health pool)

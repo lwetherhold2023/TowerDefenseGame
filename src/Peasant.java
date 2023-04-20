@@ -63,6 +63,8 @@ public class Peasant extends Enemy {
 
     // beg method that causes damage
     public void beg() {
+        super.health += 5;
+        super.damage += 5;
     }
 
     // toString method
