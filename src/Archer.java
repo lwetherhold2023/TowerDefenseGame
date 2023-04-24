@@ -6,15 +6,15 @@ public class Archer extends Knight {
 
     // class constructor - default
     public Archer() {
-        super("", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("", "", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
         this.arrows = 0;
     }
 
     // class constructor - alternate
-    public Archer(String element, int turns, double health, double damage, double speed,
+    public Archer(String type, String element, int turns, double health, double damage, double speed,
                   double agility, double strength,
                   int arrows) {
-        super(element, turns, health, damage, speed, agility, strength); // uses the super constructor
+        super(type, element, turns, health, damage, speed, agility, strength); // uses the super constructor
         this.arrows = arrows; // also include the extra variable in the Archer constructor
     }
 

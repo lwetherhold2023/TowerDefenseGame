@@ -1,5 +1,6 @@
 public class Enemy {
     // set up variables
+    protected String type;
     protected String element;
     protected int turns;
     protected double health;
@@ -8,6 +9,7 @@ public class Enemy {
 
     // class constructor - default
     public Enemy() {
+        this.type = "";
         this.element = "";
         this.turns = 0;
         this.health = 0.0;
@@ -16,12 +18,23 @@ public class Enemy {
     }
 
     // class constructor - alternate
-    public Enemy(String element, int turns, double health, double damage, double speed) {
+    public Enemy(String type, String element, int turns, double health, double damage, double speed) {
+        this.type = type;
         this.element = element;
         this.turns = turns;
         this.health = health;
         this.damage = damage;
         this.speed = speed;
+    }
+
+    // set type
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    // get type
+    public String getType() {
+        return this.type;
     }
 
     // set element
@@ -76,10 +89,11 @@ public class Enemy {
 
     // toString method
     public String toString() {
-        return "Element: \t\t\t" + this.getElement() + "\n" +
+        return "Type: \t\t\t" + this.getType() + "\n" +
+               "Element: \t\t" + this.getElement() + "\n" +
                "Turns: \t\t\t" + this.getTurns() + "\n" +
-               "Health: \t\t\t" + this.getHealth() + "\n" +
-               "Damage: \t\t\t" + this.getDamage() + "\n" +
+               "Health: \t\t" + this.getHealth() + "\n" +
+               "Damage: \t\t" + this.getDamage() + "\n" +
                "Speed: \t\t\t" + this.getSpeed() + "\n";
     }
 }

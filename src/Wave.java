@@ -40,13 +40,46 @@ public class Wave {
         return this.wave;
     }
 
-    // set enemies (RANDOM NUMBER EACH TYPE BASED ON WAVE # AND LEVELED BY INHERITANCE STRUCTURE
+    // set enemies (RANDOM NUMBER FOR EACH ENEMY TYPE BASED ON WAVE # AND LEVELED BY INHERITANCE STRUCTURE IN DIFFICULTY
     public void setEnemies(int enemies) {
         this.enemies = enemies;
         if (wave < 1) {
             int max = 5;
-            knights = random.nextInt(max + 1);
-            peasants = max - knights;
+            this.peasants = random.nextInt(max + 1);
+            this.bandits = max - getPeasants();
+        } else if (wave < 3) {
+            int max = 15;
+            this.peasants = random.nextInt(max + 1);
+            this.bandits = random.nextInt(max - getPeasants() + 1);
+            this.knights = random.nextInt(max - getBandits() + 1);
+        } else if (wave < 5) {
+            int max = 25;
+            this.peasants = random.nextInt(max + 1);
+            this.bandits = random.nextInt(max - getPeasants() + 1);
+            this.knights = random.nextInt(max - getBandits() + 1);
+            this.archers = random.nextInt(max - getKnights() + 1);
+            this.cavaliers = random.nextInt(max - getArchers() + 1);
+        } else if (wave < 10) {
+            int max = 50;
+            this.peasants = random.nextInt(max + 1);
+            this.bandits = random.nextInt(max - getPeasants() + 1);
+            this.knights = random.nextInt(max - getBandits() + 1);
+            this.archers = random.nextInt(max - getKnights() + 1);
+            this.cavaliers = random.nextInt(max - getArchers() + 1);
+            this.alchemists = random.nextInt(max - getCavaliers() + 1);
+            this.monks = random.nextInt(max - getAlchemists() + 1);
+        } else {
+            // wave 10+
+            // obtain a number between [51 - 100]
+            int max = random.nextInt(100 + 51);
+            this.peasants = random.nextInt(max + 1);
+            this.bandits = random.nextInt(max - getPeasants() + 1);
+            this.knights = random.nextInt(max - getBandits() + 1);
+            this.archers = random.nextInt(max - getKnights() + 1);
+            this.cavaliers = random.nextInt(max - getArchers() + 1);
+            this.alchemists = random.nextInt(max - getCavaliers() + 1);
+            this.monks = random.nextInt(max - getAlchemists() + 1);
+            this.priests = random.nextInt(max - getMonks() + 1);
         }
     }
 
@@ -58,8 +91,9 @@ public class Wave {
     // set peasants
     public void setPeasants(int peasants) {
         for (int i = 0; i < peasants; i++) {
-            Enemy peasant = new Peasant("", 0, 0.0, 0.0, 0.0,
-                    0.0, 0.0);
+            Enemy peasant = new Peasant("Peasant " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
+            ((Peasant)peasant).setPoverty(true);
+            ((Peasant)peasant).setMeatshield(true);
             ((Peasant)peasant).beg();
             waveHealth += peasant.getHealth();
             waveDamage += peasant.getDamage();
@@ -75,7 +109,15 @@ public class Wave {
 
     // set bandits
     public void setBandits(int bandits) {
-        this.bandits = bandits;
+        for (int i = 0; i < bandits; i++) {
+            Enemy bandit = new Bandit("Bandit " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
+            ((Bandit)bandit).setDagger(true);
+            ((Bandit)bandit).stab();
+            waveHealth += bandit.getHealth();
+            waveDamage += bandit.getDamage();
+            System.out.print(bandit);
+            System.out.print("\n\n");
+        }
     }
 
     // get bandits
@@ -85,7 +127,15 @@ public class Wave {
 
     // set knights
     public void setKnights(int knights) {
-        this.knights = knights;
+        for (int i = 0; i < knights; i++) {
+            Enemy knight = new Knight("Knight " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
+            ((Knight)knight).setSword(true);
+            ((Knight)knight).hit();
+            waveHealth += knight.getHealth();
+            waveDamage += knight.getDamage();
+            System.out.print(knight);
+            System.out.print("\n\n");
+        }
     }
 
     // get knights
@@ -95,7 +145,16 @@ public class Wave {
 
     // set archers
     public void setArchers(int archers) {
-        this.archers = archers;
+        for (int i = 0; i < archers; i++) {
+            Enemy archer = new Archer("Archer " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+            ((Archer)archer).setArrows(0);
+            ((Archer)archer).setBow(true);
+            ((Archer)archer).shoot();
+            waveHealth += archer.getHealth();
+            waveDamage += archer.getDamage();
+            System.out.print(archer);
+            System.out.print("\n\n");
+        }
     }
 
     // get archers
@@ -105,7 +164,15 @@ public class Wave {
 
     // set cavaliers
     public void setCavaliers(int cavaliers) {
-        this.cavaliers = cavaliers;
+        for (int i = 0; i < cavaliers; i++) {
+            Enemy cavalier = new Cavalier("Cavalier " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+            ((Cavalier)cavalier).setHorse(true);
+            ((Cavalier)cavalier).trample();
+            waveHealth += cavalier.getHealth();
+            waveDamage += cavalier.getDamage();
+            System.out.print(cavalier);
+            System.out.print("\n\n");
+        }
     }
 
     // get cavaliers
@@ -115,7 +182,16 @@ public class Wave {
 
     // set alchemists
     public void setAlchemists(int alchemists) {
-        this.alchemists = alchemists;
+        for (int i = 0; i < alchemists; i++) {
+            Enemy alchemist = new Alchemist("Alchemist " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+            ((Alchemist)alchemist).setPotions(0);
+            ((Alchemist)alchemist).setChemistry(true);
+            ((Alchemist)alchemist).cast();
+            waveHealth += alchemist.getHealth();
+            waveDamage += alchemist.getDamage();
+            System.out.print(alchemist);
+            System.out.print("\n\n");
+        }
     }
 
     // get alchemists
@@ -125,7 +201,17 @@ public class Wave {
 
     // set monks
     public void setMonks(int monks) {
-        this.monks = monks;
+        for (int i = 0; i < monks; i++) {
+            Enemy monk = new Monk("Monk " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+            ((Monk)monk).setItems(0);
+            ((Monk)monk).setWisdom(true);
+            ((Monk)monk).setBaldness(true);
+            ((Monk)monk).meditate();
+            waveHealth += monk.getHealth();
+            waveDamage += monk.getDamage();
+            System.out.print(monk);
+            System.out.print("\n\n");
+        }
     }
 
     // get monks
@@ -135,7 +221,17 @@ public class Wave {
 
     // set priests
     public void setPriests(int priests) {
-        this.priests = priests;
+        for (int i = 0; i < priests; i++) {
+            Enemy priest = new Priest("Priest " + (i + 1), "N/A", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 0);
+            ((Priest)priest).setEucharists(0);
+            ((Priest)priest).setBible(true);
+            ((Priest)priest).setCrucifix(true);
+            ((Priest)priest).pray();
+            waveHealth += priest.getHealth();
+            waveDamage += priest.getDamage();
+            System.out.print(priest);
+            System.out.print("\n\n");
+        }
     }
 
     // get priests
@@ -145,41 +241,17 @@ public class Wave {
 
     // according to number of each enemy type, enemies are created
     public void create() {
-        ///////////////////////////////////////////////
-        // PEASANTS
-        //////////////////////////////////////////////
         setPeasants(peasants);
+        setBandits(bandits);
+        setKnights(knights);
+        setArchers(archers);
+        setCavaliers(cavaliers);
+        setAlchemists(alchemists);
+        setMonks(monks);
+        setPriests(priests);
 
-        ///////////////////////////////////////////////
-        // BANDITS
-        //////////////////////////////////////////////
-
-        ///////////////////////////////////////////////
-        // KNIGHTS
-        //////////////////////////////////////////////
-
-        ///////////////////////////////////////////////
-        // ARCHERS
-        //////////////////////////////////////////////
-
-        ///////////////////////////////////////////////
-        // CAVALIERS
-        //////////////////////////////////////////////
-
-        ///////////////////////////////////////////////
-        // ALCHEMISTS
-        //////////////////////////////////////////////
-
-        ///////////////////////////////////////////////
-        // MONKS
-        //////////////////////////////////////////////
-
-        ///////////////////////////////////////////////
-        // PRIESTS
-        //////////////////////////////////////////////
-
-        System.out.println(waveHealth);
-        System.out.println(waveDamage);
+        System.out.println("Wave " + getWave() + " Health: " + waveHealth);
+        System.out.println("Wave " + getWave() + " Damage: " + waveDamage);
     }
 
     // attack method represents an enemy wave attacking the towers (total attack pool and modified health pool)

@@ -5,14 +5,14 @@ public class Cavalier extends Archer {
 
     // class constructor - default
     public Cavalier() {
-        super("", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+        super("", "", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
     }
 
     // class constructor - alternate
-    public Cavalier(String element, int turns, double health, double damage, double speed,
+    public Cavalier(String type, String element, int turns, double health, double damage, double speed,
                     double agility, double strength,
                     int arrows) {
-        super(element, turns, health, damage, speed, agility, strength, arrows); // uses the super constructor
+        super(type, element, turns, health, damage, speed, agility, strength, arrows); // uses the super constructor
     }
 
     // set horse

@@ -7,15 +7,15 @@ public class Monk extends Bandit {
 
     // class constructor - default
     public Monk() {
-        super("", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("", "", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
         this.items = 0;
     }
 
     // class constructor - alternate
-    public Monk(String element, int turns, double health, double damage, double speed,
+    public Monk(String type, String element, int turns, double health, double damage, double speed,
                 double agility, double strength,
                 int items) {
-        super(element, turns, health, damage, speed, agility, strength); // uses the super constructor
+        super(type, element, turns, health, damage, speed, agility, strength); // uses the super constructor
         this.items = items; // also include the extra variable in the Monk constructor
     }
 

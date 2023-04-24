@@ -5,13 +5,13 @@ public class Bandit extends Peasant {
 
     // class constructor - default
     public Bandit() {
-        super("", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("", "", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
     }
 
     // class constructor - alternate
-    public Bandit(String element, int turns, double health, double damage, double speed,
+    public Bandit(String type, String element, int turns, double health, double damage, double speed,
                   double agility, double strength) {
-        super(element, turns, health, damage, speed, agility, strength); // uses the super constructor
+        super(type, element, turns, health, damage, speed, agility, strength); // uses the super constructor
     }
 
     // set dagger
@@ -26,6 +26,8 @@ public class Bandit extends Peasant {
 
     // stab method that causes damage
     public void stab() {
+        super.health += 10;
+        super.damage += 10;
     }
 
     // toString method

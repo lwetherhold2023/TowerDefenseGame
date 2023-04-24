@@ -8,15 +8,15 @@ public class Peasant extends Enemy {
 
     // class constructor - default
     public Peasant() {
-        super("", 0, 0.0, 0.0, 0.0);
+        super("", "", 0, 0.0, 0.0, 0.0);
         this.agility = 0;
         this.strength = 0;
     }
 
     // class constructor - alternate
-    public Peasant(String element, int turns, double health, double damage, double speed,
+    public Peasant(String type, String element, int turns, double health, double damage, double speed,
                    double agility, double strength) {
-        super(element, turns, health, damage, speed); // uses the super constructor
+        super(type, element, turns, health, damage, speed); // uses the super constructor
         this.agility = agility; // also include the extra variable in the Peasant constructor
         this.strength = strength; // also include the extra variable in the Peasant constructor
     }
@@ -70,7 +70,7 @@ public class Peasant extends Enemy {
     // toString method
     // uses the super toString, as well as adding the new variables to it
     public String toString() {
-        return super.toString() + "Agility: \t\t\t" + this.getAgility() + "\n" +
-                                  "Strength: \t\t\t" + this.getStrength() + "\n";
+        return super.toString() + "Agility: \t\t" + this.getAgility() + "\n" +
+                                  "Strength: \t\t" + this.getStrength() + "\n";
     }
 }
