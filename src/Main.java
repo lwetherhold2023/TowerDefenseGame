@@ -6,8 +6,17 @@ public class Main {
         double towerHealth = 0;
         double towerDamage = 0;
 
-        Wave wave = new Wave(0, 5);
-        wave.setEnemies(5);
+        Wave wave = new Wave(0);
+        wave.setEnemies();
         wave.create();
+
+        wave.setWave(10);
+        wave.setEnemies();
+        wave.create();
+        System.out.println(wave);
+    }
+
+    public void nextWave() {
+
     }
 }

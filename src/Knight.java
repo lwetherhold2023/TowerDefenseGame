@@ -26,6 +26,8 @@ public class Knight extends Peasant {
 
     // hit method that causes damage
     public void hit() {
+        super.health += 15;
+        super.damage += 15;
     }
 
     // toString method

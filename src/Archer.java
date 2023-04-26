@@ -40,6 +40,8 @@ public class Archer extends Knight {
 
     // shoot method that causes damage
     public void shoot() {
+        super.health += 20;
+        super.damage += 20;
     }
 
     // toString method

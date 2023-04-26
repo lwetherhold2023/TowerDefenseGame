@@ -27,6 +27,8 @@ public class Cavalier extends Archer {
 
     // trample method that causes damage
     public void trample() {
+        super.health += 50;
+        super.damage += 50;
     }
 
     // toString method

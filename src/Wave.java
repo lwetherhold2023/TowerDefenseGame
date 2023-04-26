@@ -7,6 +7,8 @@ public class Wave {
     // set up variables
     public double waveHealth = 0;
     public double waveDamage = 0;
+    int max;
+    int remaining;
     private int wave;
     private int enemies;
     private int peasants;
@@ -21,13 +23,11 @@ public class Wave {
     // class constructor - default
     public Wave() {
         this.wave = 0;
-        this.enemies = 0;
     }
 
     // class constructor - alternate
-    public Wave(int wave, int enemies) {
+    public Wave(int wave) {
         this.wave = wave;
-        this.enemies = enemies;
     }
 
     // set wave
@@ -41,45 +41,76 @@ public class Wave {
     }
 
     // set enemies (RANDOM NUMBER FOR EACH ENEMY TYPE BASED ON WAVE # AND LEVELED BY INHERITANCE STRUCTURE IN DIFFICULTY
-    public void setEnemies(int enemies) {
-        this.enemies = enemies;
+    public void setEnemies() {
         if (wave < 1) {
-            int max = 5;
+            max = 5;
+            remaining = max;
+            this.enemies = max;
             this.peasants = random.nextInt(max + 1);
-            this.bandits = max - getPeasants();
+            remaining -= this.peasants;
+            this.bandits = remaining;
         } else if (wave < 3) {
-            int max = 15;
+            max = 15;
+            remaining = max;
+            this.enemies = max;
             this.peasants = random.nextInt(max + 1);
-            this.bandits = random.nextInt(max - getPeasants() + 1);
-            this.knights = random.nextInt(max - getBandits() + 1);
+            remaining -= this.peasants;
+            this.bandits = random.nextInt(remaining + 1);
+            remaining -= this.bandits;
+            this.knights = remaining;
         } else if (wave < 5) {
-            int max = 25;
+            max = 25;
+            remaining = max;
+            this.enemies = max;
             this.peasants = random.nextInt(max + 1);
-            this.bandits = random.nextInt(max - getPeasants() + 1);
-            this.knights = random.nextInt(max - getBandits() + 1);
-            this.archers = random.nextInt(max - getKnights() + 1);
-            this.cavaliers = random.nextInt(max - getArchers() + 1);
+            remaining -= this.peasants;
+            this.bandits = random.nextInt(remaining + 1);
+            remaining -= this.bandits;
+            this.knights = random.nextInt(remaining + 1);
+            remaining -= this.knights;
+            this.archers = random.nextInt(remaining + 1);
+            remaining -= this.archers;
+            this.cavaliers = remaining;
         } else if (wave < 10) {
-            int max = 50;
+            max = 50;
+            remaining = max;
+            this.enemies = max;
             this.peasants = random.nextInt(max + 1);
-            this.bandits = random.nextInt(max - getPeasants() + 1);
-            this.knights = random.nextInt(max - getBandits() + 1);
-            this.archers = random.nextInt(max - getKnights() + 1);
-            this.cavaliers = random.nextInt(max - getArchers() + 1);
-            this.alchemists = random.nextInt(max - getCavaliers() + 1);
-            this.monks = random.nextInt(max - getAlchemists() + 1);
+            remaining -= this.peasants;
+            this.bandits = random.nextInt(remaining + 1);
+            remaining -= this.bandits;
+            this.knights = random.nextInt(remaining + 1);
+            remaining -= this.knights;
+            this.archers = random.nextInt(remaining + 1);
+            remaining -= this.archers;
+            this.cavaliers = random.nextInt(remaining + 1);
+            remaining -= this.cavaliers;
+            this.alchemists = random.nextInt(remaining + 1);
+            remaining -= this.alchemists;
+            this.monks = remaining;
         } else {
             // wave 10+
-            // obtain a number between [51 - 100]
-            int max = random.nextInt(100 + 51);
+            // obtain a number between [0 - 49]
+            // obtain a number between [51, 100]
+            max = random.nextInt(50) + 51;
+            // (int)(Math.random() * (max - min) + min)
+            remaining = max;
+            this.enemies = max;
             this.peasants = random.nextInt(max + 1);
-            this.bandits = random.nextInt(max - getPeasants() + 1);
-            this.knights = random.nextInt(max - getBandits() + 1);
-            this.archers = random.nextInt(max - getKnights() + 1);
-            this.cavaliers = random.nextInt(max - getArchers() + 1);
-            this.alchemists = random.nextInt(max - getCavaliers() + 1);
-            this.monks = random.nextInt(max - getAlchemists() + 1);
-            this.priests = random.nextInt(max - getMonks() + 1);
+            remaining -= this.peasants;
+            this.bandits = random.nextInt(remaining + 1);
+            remaining -= this.bandits;
+            this.knights = random.nextInt(remaining + 1);
+            remaining -= this.knights;
+            this.archers = random.nextInt(remaining + 1);
+            remaining -= this.archers;
+            this.cavaliers = random.nextInt(remaining + 1);
+            remaining -= this.cavaliers;
+            this.alchemists = random.nextInt(remaining + 1);
+            remaining -= this.alchemists;
+            this.monks = random.nextInt(remaining + 1);
+            remaining -= this.monks;
+            this.priests = remaining;
         }
     }
 
@@ -249,9 +280,6 @@ public class Wave {
         setAlchemists(alchemists);
         setMonks(monks);
         setPriests(priests);
-
-        System.out.println("Wave " + getWave() + " Health: " + waveHealth);
-        System.out.println("Wave " + getWave() + " Damage: " + waveDamage);
     }
 
     // attack method represents an enemy wave attacking the towers (total attack pool and modified health pool)
@@ -261,14 +289,16 @@ public class Wave {
     // toString method
     public String toString() {
         return "Wave: \t\t\t" + this.getWave() + "\n" +
-               "Enemies: \t\t\t" + this.getEnemies() + "\n" +
-                  "Peasants: \t\t\t\t" + this.getPeasants() + "\n" +
-                  "Bandits: \t\t\t\t" + this.getBandits() + "\n" +
-                  "Knights: \t\t\t\t" + this.getKnights() + "\n" +
-                  "Archers: \t\t\t\t" + this.getArchers() + "\n" +
-                  "Cavaliers: \t\t\t\t" + this.getCavaliers() + "\n" +
-                  "Alchemists: \t\t\t\t" + this.getAlchemists() + "\n" +
-                  "Monks: \t\t\t\t" + this.getMonks() + "\n" +
-                  "Priests: \t\t\t\t" + this.getPriests() + "\n";
+               "\tTotal Health: \t" + waveHealth + "\n" +
+               "\tTotal Damage: \t" + waveDamage + "\n" +
+               "Enemies: \t\t" + this.getEnemies() + "\n" +
+                  "\tPeasants: \t\t" + this.getPeasants() + "\n" +
+                  "\tBandits: \t\t" + this.getBandits() + "\n" +
+                  "\tKnights: \t\t" + this.getKnights() + "\n" +
+                  "\tArchers: \t\t" + this.getArchers() + "\n" +
+                  "\tCavaliers: \t\t" + this.getCavaliers() + "\n" +
+                  "\tAlchemists: \t" + this.getAlchemists() + "\n" +
+                  "\tMonks: \t\t\t" + this.getMonks() + "\n" +
+                  "\tPriests: \t\t" + this.getPriests() + "\n";
     }
 }

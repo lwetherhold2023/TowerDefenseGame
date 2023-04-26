@@ -40,6 +40,18 @@ public class Alchemist extends Bandit {
 
     // cast method that causes damage
     public void cast() {
+        super.health += 75;
+        super.damage += 75;
+    }
+
+    @Override
+    public double getHealth() {
+        double randomMultiplier = Math.random() * (2 - 0.5) + 0.5;
+        if (chemistry) {
+            return (((int)(super.getHealth() * randomMultiplier * 100)) / 100);
+        } else {
+            return super.getHealth();
+        }
     }
 
     // toString method

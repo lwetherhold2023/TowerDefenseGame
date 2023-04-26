@@ -51,6 +51,8 @@ public class Monk extends Bandit {
 
     // meditate method that causes damage
     public void meditate() {
+        super.health += 100;
+        super.damage += 100;
     }
 
     // toString method

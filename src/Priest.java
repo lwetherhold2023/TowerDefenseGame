@@ -52,6 +52,8 @@ public class Priest extends Monk {
 
     // pray method that causes damage
     public void pray() {
+        super.health += 150;
+        super.damage += 150;
     }
 
     // toString method
