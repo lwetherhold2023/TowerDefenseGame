@@ -6,15 +6,15 @@ public class Archer extends Knight {
 
     // class constructor - default
     public Archer() {
-        super("", "", 0, 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("", 0.0, 0.0, 0.0, 0.0, 0.0);
         this.arrows = 0;
     }
 
     // class constructor - alternate
-    public Archer(String type, String element, int turns, double health, double damage, double speed,
+    public Archer(String type, double health, double damage, double speed,
                   double agility, double strength,
                   int arrows) {
-        super(type, element, turns, health, damage, speed, agility, strength); // uses the super constructor
+        super(type, health, damage, speed, agility, strength); // uses the super constructor
         this.arrows = arrows; // also include the extra variable in the Archer constructor
     }
 
@@ -47,6 +47,6 @@ public class Archer extends Knight {
     // toString method
     // uses the super toString, as well as adding the new variables to it
     public String toString() {
-        return super.toString() + "Arrows: \t\t\t" + this.getArrows() + "\n";
+        return super.toString() + "Arrows: \t\t" + this.getArrows() + "\n";
     }
 }

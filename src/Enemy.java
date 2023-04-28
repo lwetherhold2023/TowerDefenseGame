@@ -1,27 +1,33 @@
+import java.util.Random;
+
 public class Enemy {
+    // set up random number generator
+    Random random = new Random();
+
     // set up variables
+    private int randomInt;
     protected String type;
     protected String element;
-    protected int turns;
     protected double health;
     protected double damage;
     protected double speed;
+
+    // set up elements list
+    String[] elementList = {"N/A", "Fire", "Water", "Earth", "Wind", "Air", "Ice"};
 
     // class constructor - default
     public Enemy() {
         this.type = "";
         this.element = "";
-        this.turns = 0;
         this.health = 0.0;
         this.damage = 0.0;
         this.speed = 0.0;
     }
 
     // class constructor - alternate
-    public Enemy(String type, String element, int turns, double health, double damage, double speed) {
+    public Enemy(String type, double health, double damage, double speed) {
         this.type = type;
-        this.element = element;
-        this.turns = turns;
+        this.element = "";
         this.health = health;
         this.damage = damage;
         this.speed = speed;
@@ -38,23 +44,14 @@ public class Enemy {
     }
 
     // set element
-    public void setElement(String element) {
-        this.element = element;
+    public void setElement() {
+        randomInt = random.nextInt(elementList.length);
+        this.element = elementList[randomInt];
     }
 
     // get element
     public String getElement() {
         return this.element;
-    }
-
-    // set turns
-    public void setTurns(int turns) {
-        this.turns = turns;
-    }
-
-    // get turns
-    public int getTurns() {
-        return this.turns;
     }
 
     // set health
@@ -91,7 +88,6 @@ public class Enemy {
     public String toString() {
         return "Type: \t\t\t" + this.getType() + "\n" +
                "Element: \t\t" + this.getElement() + "\n" +
-               "Turns: \t\t\t" + this.getTurns() + "\n" +
                "Health: \t\t" + this.getHealth() + "\n" +
                "Damage: \t\t" + this.getDamage() + "\n" +
                "Speed: \t\t\t" + this.getSpeed() + "\n";

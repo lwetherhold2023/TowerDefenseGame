@@ -7,16 +7,16 @@ public class Priest extends Monk {
 
     // class constructor - default
     public Priest() {
-        super("", "", 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+        super("", 0.0, 0.0, 0.0, 0.0, 0.0, 0);
         this.eucharists = 0;
     }
 
     // class constructor - alternate
-    public Priest(String type, String element, int turns, double health, double damage, double speed,
+    public Priest(String type, double health, double damage, double speed,
                   double agility, double strength,
                 int items,
                 int eucharists) {
-        super(type, element, turns, health, damage, speed, agility, strength, items); // uses the super constructor
+        super(type, health, damage, speed, agility, strength, items); // uses the super constructor
         this.eucharists = eucharists; // also include the extra variable in the Priest constructor
     }
 
@@ -59,6 +59,6 @@ public class Priest extends Monk {
     // toString method
     // uses the super toString, as well as adding the new variables to it
     public String toString() {
-        return super.toString() + "Eucharists: \t\t\t" + this.getEucharists() + "\n";
+        return super.toString() + "Eucharists: \t" + this.getEucharists() + "\n";
     }
 }

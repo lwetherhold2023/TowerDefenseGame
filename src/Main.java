@@ -10,7 +10,7 @@ public class Main {
         wave.setEnemies();
         wave.create();
 
-        wave.setWave(10);
+        wave.setWave(25);
         wave.setEnemies();
         wave.create();
         System.out.println(wave);
