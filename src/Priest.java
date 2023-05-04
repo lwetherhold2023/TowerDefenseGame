@@ -7,17 +7,14 @@ public class Priest extends Monk {
 
     // class constructor - default
     public Priest() {
-        super("", 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+        super("");
         this.eucharists = 0;
     }
 
     // class constructor - alternate
-    public Priest(String type, double health, double damage, double speed,
-                  double agility, double strength,
-                int items,
-                int eucharists) {
-        super(type, health, damage, speed, agility, strength, items); // uses the super constructor
-        this.eucharists = eucharists; // also include the extra variable in the Priest constructor
+    public Priest(String type) {
+        super(type); // uses the super constructor
+        this.eucharists = 0; // also include the extra variable in the Priest constructor
     }
 
     // set eucharists

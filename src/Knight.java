@@ -5,13 +5,12 @@ public class Knight extends Peasant {
 
     // class constructor - default
     public Knight() {
-        super("", 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("");
     }
 
     // class constructor - alternate
-    public Knight(String type, double health, double damage, double speed,
-                  double agility, double strength) {
-        super(type, health, damage, speed, agility, strength); // uses the super constructor
+    public Knight(String type) {
+        super(type); // uses the super constructor
     }
 
     // set sword

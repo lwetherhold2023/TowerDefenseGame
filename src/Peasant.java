@@ -8,17 +8,18 @@ public class Peasant extends Enemy {
 
     // class constructor - default
     public Peasant() {
-        super("", 0.0, 0.0, 0.0);
+        super("");
         this.agility = 0;
         this.strength = 0;
     }
 
     // class constructor - alternate
-    public Peasant(String type, double health, double damage, double speed,
-                   double agility, double strength) {
-        super(type, health, damage, speed); // uses the super constructor
-        this.agility = agility; // also include the extra variable in the Peasant constructor
-        this.strength = strength; // also include the extra variable in the Peasant constructor
+    public Peasant(String type) {
+        super(type); // uses the super constructor
+        this.agility = 0; // also include the extra variable in the Peasant constructor
+        this.strength = 0; // also include the extra variable in the Peasant constructor
+        setStats(10, 1);
+        setElement();
     }
 
     // set agility
@@ -59,6 +60,15 @@ public class Peasant extends Enemy {
     // get meatshield
     public boolean getMeatshield() {
         return this.meatshield;
+    }
+
+    // set stats
+    // overrides the super setStats method
+    @Override
+    public void setStats(int max, int min) {
+        super.setStats(max, min);
+        setAgility(random.nextInt(max - min + 1) + min);
+        setStrength(random.nextInt(max - min + 1) + min);
     }
 
     // beg method that causes damage

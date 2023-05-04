@@ -5,13 +5,12 @@ public class Bandit extends Peasant {
 
     // class constructor - default
     public Bandit() {
-        super("", 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("");
     }
 
     // class constructor - alternate
-    public Bandit(String type, double health, double damage, double speed,
-                  double agility, double strength) {
-        super(type, health, damage, speed, agility, strength); // uses the super constructor
+    public Bandit(String type) {
+        super(type); // uses the super constructor
     }
 
     // set dagger
@@ -22,6 +21,20 @@ public class Bandit extends Peasant {
     // get dagger
     public boolean getDagger() {
         return this.dagger;
+    }
+
+    // get damage
+    // overrides the super getDamage method
+    @Override
+    public double getDamage() {
+        maxDbl = 1.5;
+        minDbl = 0.8;
+        randomMultiplier = Math.random() * (maxDbl - minDbl) + minDbl;
+        if (dagger) {
+            return ((double)((int)(super.getDamage() * randomMultiplier * 100))) / 100;
+        } else {
+            return super.getDamage();
+        }
     }
 
     // stab method that causes damage

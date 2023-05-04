@@ -1,32 +1,29 @@
-import java.util.Random;
-
 // Alchemist Class inherits from Bandit Class
 public class Alchemist extends Bandit {
-    // set up random number generator
-    Random random = new Random();
 
     // set up variables
-    double randomMultiplier; // double that acts as a multiplier for randomization
-    int randomInt; // int that acts as a multiplier for randomization
     int potions; // has an extra variable, potions
     boolean chemistry; // has a modifier, chemistry
 
     // class constructor - default
     public Alchemist() {
-        super("", 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("");
         this.potions = 0;
     }
 
     // class constructor - alternate
-    public Alchemist(String type, double health, double damage, double speed,
-                     double agility, double strength) {
-        super(type, health, damage, speed, agility, strength); // uses the super constructor
+    public Alchemist(String type) {
+        super(type); // uses the super constructor
         this.potions = 0; // also include the extra variable in the Alchemist constructor
+        setStats(100, 1);
+        setPotions();
     }
 
     // set potions
     public void setPotions() {
-        this.potions = random.nextInt(11);
+        max = 10;
+        min = 1;
+        this.potions = random.nextInt(max - min + 1) + min;
     }
 
     // get potions
@@ -44,29 +41,37 @@ public class Alchemist extends Bandit {
         return this.chemistry;
     }
 
-    // cast method that causes damage
-    public void cast() {
-        super.health += 75;
-        super.damage += 75;
-    }
-
+    // get health
+    // overrides the super getHealth method
     @Override
     public double getHealth() {
-        randomMultiplier = Math.random() * (2 - 0.5) + 0.5;
+        maxDbl = 2;
+        minDbl = 0.5;
+        randomMultiplier = Math.random() * (maxDbl - minDbl) + minDbl;
         if (chemistry) {
-            return (double)((((int)(super.getHealth() * randomMultiplier * 100)) / 100));
+            return ((double)((int)(super.getHealth() * randomMultiplier * 100))) / 100;
         } else {
             return super.getHealth();
         }
     }
 
+    // get damage
+    // overrides the super getDamage method
     @Override
     public double getDamage() {
+        max = 7;
+        min = 1;
         for (int i = 0; i < potions; i++) {
-            randomInt = random.nextInt(7 + 1);
+            randomInt = random.nextInt(max - min + 1) + min;
             super.damage += randomInt;
         }
         return super.getDamage();
+    }
+
+    // cast method that causes damage
+    public void cast() {
+        super.health += 75;
+        super.damage += 75;
     }
 
     // toString method

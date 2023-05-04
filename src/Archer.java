@@ -6,21 +6,23 @@ public class Archer extends Knight {
 
     // class constructor - default
     public Archer() {
-        super("", 0.0, 0.0, 0.0, 0.0, 0.0);
+        super("");
         this.arrows = 0;
     }
 
     // class constructor - alternate
-    public Archer(String type, double health, double damage, double speed,
-                  double agility, double strength,
-                  int arrows) {
-        super(type, health, damage, speed, agility, strength); // uses the super constructor
-        this.arrows = arrows; // also include the extra variable in the Archer constructor
+    public Archer(String type) {
+        super(type); // uses the super constructor
+        this.arrows = 0; // also include the extra variable in the Archer constructor
+        setStats(50, 1);
+        setArrows();
     }
 
     // set arrows
-    public void setArrows(int arrows) {
-        this.arrows = arrows;
+    public void setArrows() {
+        max = 25;
+        min = 1;
+        this.arrows = random.nextInt(max - min + 1) + min;
     }
 
     // get arrows
@@ -36,6 +38,28 @@ public class Archer extends Knight {
     // get bow
     public boolean getBow() {
         return this.bow;
+    }
+
+    // get damage
+    // overrides the super getDamage method
+    @Override
+    public double getDamage() {
+        for (int i = 0; i < arrows; i++) {
+            randomInt = random.nextInt(3 + 1);
+            super.damage += randomInt;
+        }
+        return super.getDamage();
+    }
+
+    // get speed
+    // overrides the super getSpeed method
+    @Override
+    public double getSpeed() {
+        if (bow) {
+            return super.getSpeed() + 50;
+        } else {
+            return super.getSpeed();
+        }
     }
 
     // shoot method that causes damage

@@ -122,8 +122,7 @@ public class Wave {
     // set peasants
     public void setPeasants(int peasants) {
         for (int i = 0; i < peasants; i++) {
-            Enemy peasant = new Peasant("Peasant " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0);
-            ((Peasant)peasant).setElement();
+            Enemy peasant = new Peasant("Peasant " + (i + 1));
             ((Peasant)peasant).setPoverty(true);
             ((Peasant)peasant).setMeatshield(true);
             ((Peasant)peasant).beg();
@@ -142,8 +141,7 @@ public class Wave {
     // set bandits
     public void setBandits(int bandits) {
         for (int i = 0; i < bandits; i++) {
-            Enemy bandit = new Bandit("Bandit " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0);
-            ((Bandit)bandit).setElement();
+            Enemy bandit = new Bandit("Bandit " + (i + 1));
             ((Bandit)bandit).setDagger(true);
             ((Bandit)bandit).stab();
             waveHealth += bandit.getHealth();
@@ -161,8 +159,7 @@ public class Wave {
     // set knights
     public void setKnights(int knights) {
         for (int i = 0; i < knights; i++) {
-            Enemy knight = new Knight("Knight " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0);
-            ((Knight)knight).setElement();
+            Enemy knight = new Knight("Knight " + (i + 1));
             ((Knight)knight).setSword(true);
             ((Knight)knight).hit();
             waveHealth += knight.getHealth();
@@ -180,9 +177,7 @@ public class Wave {
     // set archers
     public void setArchers(int archers) {
         for (int i = 0; i < archers; i++) {
-            Enemy archer = new Archer("Archer " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0, 0);
-            ((Archer)archer).setElement();
-            ((Archer)archer).setArrows(0);
+            Enemy archer = new Archer("Archer " + (i + 1));
             ((Archer)archer).setBow(true);
             ((Archer)archer).shoot();
             waveHealth += archer.getHealth();
@@ -200,8 +195,7 @@ public class Wave {
     // set cavaliers
     public void setCavaliers(int cavaliers) {
         for (int i = 0; i < cavaliers; i++) {
-            Enemy cavalier = new Cavalier("Cavalier " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0, 0);
-            ((Cavalier)cavalier).setElement();
+            Enemy cavalier = new Cavalier("Cavalier " + (i + 1));
             ((Cavalier)cavalier).setHorse(true);
             ((Cavalier)cavalier).trample();
             waveHealth += cavalier.getHealth();
@@ -219,9 +213,7 @@ public class Wave {
     // set alchemists
     public void setAlchemists(int alchemists) {
         for (int i = 0; i < alchemists; i++) {
-            Enemy alchemist = new Alchemist("Alchemist " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0);
-            ((Alchemist)alchemist).setElement();
-            ((Alchemist)alchemist).setPotions();
+            Enemy alchemist = new Alchemist("Alchemist " + (i + 1));
             ((Alchemist)alchemist).setChemistry(true);
             ((Alchemist)alchemist).cast();
             waveHealth += alchemist.getHealth();
@@ -239,8 +231,7 @@ public class Wave {
     // set monks
     public void setMonks(int monks) {
         for (int i = 0; i < monks; i++) {
-            Enemy monk = new Monk("Monk " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0, 0);
-            ((Monk)monk).setElement();
+            Enemy monk = new Monk("Monk " + (i + 1));
             ((Monk)monk).setItems(0);
             ((Monk)monk).setWisdom(true);
             ((Monk)monk).setBaldness(true);
@@ -260,8 +251,7 @@ public class Wave {
     // set priests
     public void setPriests(int priests) {
         for (int i = 0; i < priests; i++) {
-            Enemy priest = new Priest("Priest " + (i + 1), 0.0, 0.0, 0.0, 0.0, 0.0, 0, 0);
-            ((Priest)priest).setElement();
+            Enemy priest = new Priest("Priest " + (i + 1));
             ((Priest)priest).setEucharists(0);
             ((Priest)priest).setBible(true);
             ((Priest)priest).setCrucifix(true);

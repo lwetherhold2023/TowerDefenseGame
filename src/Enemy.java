@@ -5,7 +5,12 @@ public class Enemy {
     Random random = new Random();
 
     // set up variables
-    private int randomInt;
+    protected double randomMultiplier; // double that acts as a multiplier for randomization
+    protected double maxDbl; // the max a random double can be
+    protected double minDbl; // the min a random double can be
+    protected int randomInt; // int that acts as a multiplier for randomization
+    protected int max; // the max a random int can be
+    protected int min; // the min a random int can be
     protected String type;
     protected String element;
     protected double health;
@@ -25,12 +30,12 @@ public class Enemy {
     }
 
     // class constructor - alternate
-    public Enemy(String type, double health, double damage, double speed) {
+    public Enemy(String type) {
         this.type = type;
         this.element = "";
-        this.health = health;
-        this.damage = damage;
-        this.speed = speed;
+        this.health = 0.0;
+        this.damage = 0.0;
+        this.speed = 0.0;
     }
 
     // set type
@@ -82,6 +87,13 @@ public class Enemy {
     // get speed
     public double getSpeed() {
         return this.speed;
+    }
+
+    // set stats
+    public void setStats(int max, int min) {
+        setHealth(random.nextInt(max - min + 1) + min);
+        setDamage(random.nextInt(max - min + 1) + min);
+        setSpeed(random.nextInt(max - min + 1) + min);
     }
 
     // toString method

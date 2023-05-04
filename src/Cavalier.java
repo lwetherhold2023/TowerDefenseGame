@@ -5,14 +5,12 @@ public class Cavalier extends Archer {
 
     // class constructor - default
     public Cavalier() {
-        super("", 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+        super("");
     }
 
     // class constructor - alternate
-    public Cavalier(String type, double health, double damage, double speed,
-                    double agility, double strength,
-                    int arrows) {
-        super(type, health, damage, speed, agility, strength, arrows); // uses the super constructor
+    public Cavalier(String type) {
+        super(type); // uses the super constructor
     }
 
     // set horse
@@ -23,6 +21,33 @@ public class Cavalier extends Archer {
     // get horse
     public boolean getHorse() {
         return this.horse;
+    }
+
+    @Override
+    public double getDamage() {
+        max = 85;
+        min = 25;
+        randomInt = random.nextInt(max - min + 1) + min;
+        if (horse) {
+            return super.getDamage() + randomInt;
+        } else {
+            return super.getDamage();
+        }
+    }
+
+    @Override
+    public double getStrength() {
+        return super.getStrength() + 45;
+    }
+
+    @Override
+    public double getSpeed() {
+        return super.getSpeed() + 75;
+    }
+
+    @Override
+    public double getAgility() {
+        return super.getAgility() + 15;
     }
 
     // trample method that causes damage
