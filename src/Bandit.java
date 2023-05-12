@@ -11,6 +11,7 @@ public class Bandit extends Peasant {
     // class constructor - alternate
     public Bandit(String type) {
         super(type); // uses the super constructor
+        setStats(10, 1);
     }
 
     // set dagger

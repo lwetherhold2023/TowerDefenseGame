@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7416a926-c7cc-4b10-9c79-3e8e2bc8550c" name="Changes" comment="Development: Day 8 (modified most Classes; developed Alchemist class, Enemy class, and Wave class)">
+    <list default="true" id="7416a926-c7cc-4b10-9c79-3e8e2bc8550c" name="Changes" comment="Development: Day 9 (modified most Classes; developed some Classes)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Alchemist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alchemist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bandit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bandit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cavalier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Peasant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Priest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Priest.java" afterDir="false" />
@@ -105,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682716781988</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Development: Day 9 (modified most Classes; developed some Classes)">
+      <created>1683217523707</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683217523707</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +133,7 @@
     <MESSAGE value="Development: Day 6 (modified most Classes; developed Wave class)" />
     <MESSAGE value="Development: Day 7 (modified some Classes; developed Wave class)" />
     <MESSAGE value="Development: Day 8 (modified most Classes; developed Alchemist class, Enemy class, and Wave class)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Development: Day 8 (modified most Classes; developed Alchemist class, Enemy class, and Wave class)" />
+    <MESSAGE value="Development: Day 9 (modified most Classes; developed some Classes)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Development: Day 9 (modified most Classes; developed some Classes)" />
   </component>
 </project>

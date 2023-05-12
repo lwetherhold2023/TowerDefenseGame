@@ -11,6 +11,7 @@ public class Knight extends Peasant {
     // class constructor - alternate
     public Knight(String type) {
         super(type); // uses the super constructor
+        setStats(15, 1);
     }
 
     // set sword
@@ -21,6 +22,18 @@ public class Knight extends Peasant {
     // get sword
     public boolean getSword() {
         return this.sword;
+    }
+
+    @Override
+    public double getDamage() {
+        max = 10;
+        min = 1;
+        randomInt = random.nextInt(max - min + 1) + min;
+        if (sword) {
+            return super.getDamage() + randomInt;
+        } else {
+            return super.getDamage();
+        }
     }
 
     // hit method that causes damage

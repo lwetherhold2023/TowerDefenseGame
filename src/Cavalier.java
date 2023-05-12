@@ -11,6 +11,7 @@ public class Cavalier extends Archer {
     // class constructor - alternate
     public Cavalier(String type) {
         super(type); // uses the super constructor
+        setStats(25, 1);
     }
 
     // set horse

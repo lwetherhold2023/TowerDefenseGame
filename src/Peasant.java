@@ -18,7 +18,7 @@ public class Peasant extends Enemy {
         super(type); // uses the super constructor
         this.agility = 0; // also include the extra variable in the Peasant constructor
         this.strength = 0; // also include the extra variable in the Peasant constructor
-        setStats(10, 1);
+        setStats(5, 1);
         setElement();
     }
 
@@ -69,6 +69,24 @@ public class Peasant extends Enemy {
         super.setStats(max, min);
         setAgility(random.nextInt(max - min + 1) + min);
         setStrength(random.nextInt(max - min + 1) + min);
+    }
+
+    @Override
+    public double getHealth() {
+        max = 5;
+        min = 0;
+        randomInt = random.nextInt(max - min + 1) + min;
+        if (poverty) {
+            return super.getHealth() - randomInt;
+        }
+        maxDbl = 3.8;
+        minDbl = 0.37;
+        randomMultiplier = Math.random() * (maxDbl - minDbl) + minDbl;
+        if (meatshield) {
+            return ((double)((int)(super.getHealth() * randomMultiplier * 100))) / 100;
+        } else {
+            return super.getHealth();
+        }
     }
 
     // beg method that causes damage

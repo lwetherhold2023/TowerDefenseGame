@@ -15,11 +15,13 @@ public class Monk extends Bandit {
     public Monk(String type) {
         super(type); // uses the super constructor
         this.items = 0; // also include the extra variable in the Monk constructor
+        setStats(150, 1);
+        setItems();
     }
 
     // set items
-    public void setItems(int items) {
-        this.items = items;
+    public void setItems() {
+        this.items = 0;
     }
 
     // get items
@@ -45,6 +47,34 @@ public class Monk extends Bandit {
     // get baldness
     public boolean getBaldness() {
         return this.baldness;
+    }
+
+    @Override
+    public double getDamage() {
+        max = 125;
+        min = 50;
+        randomInt = random.nextInt(max - min + 1) + min;
+        if (wisdom) {
+            return super.getDamage() + randomInt;
+        }
+        randomInt = random.nextInt(max - min + 1) + min;
+        if (baldness) {
+            return super.getDamage() + randomInt;
+        } else {
+            return super.getDamage();
+        }
+    }
+
+    @Override
+    public double getAgility() {
+        max = 115;
+        min = 65;
+        randomInt = random.nextInt(max - min + 1) + min;
+        if (wisdom) {
+            return super.getAgility() + randomInt;
+        } else {
+            return super.getAgility();
+        }
     }
 
     // meditate method that causes damage

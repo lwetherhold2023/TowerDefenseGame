@@ -44,8 +44,10 @@ public class Archer extends Knight {
     // overrides the super getDamage method
     @Override
     public double getDamage() {
+        max = 3;
+        min = 1;
         for (int i = 0; i < arrows; i++) {
-            randomInt = random.nextInt(3 + 1);
+            randomInt = random.nextInt(max - min + 1) + min;
             super.damage += randomInt;
         }
         return super.getDamage();

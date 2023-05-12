@@ -232,7 +232,6 @@ public class Wave {
     public void setMonks(int monks) {
         for (int i = 0; i < monks; i++) {
             Enemy monk = new Monk("Monk " + (i + 1));
-            ((Monk)monk).setItems(0);
             ((Monk)monk).setWisdom(true);
             ((Monk)monk).setBaldness(true);
             ((Monk)monk).meditate();
@@ -252,7 +251,6 @@ public class Wave {
     public void setPriests(int priests) {
         for (int i = 0; i < priests; i++) {
             Enemy priest = new Priest("Priest " + (i + 1));
-            ((Priest)priest).setEucharists(0);
             ((Priest)priest).setBible(true);
             ((Priest)priest).setCrucifix(true);
             ((Priest)priest).pray();
@@ -287,8 +285,8 @@ public class Wave {
     // toString method
     public String toString() {
         return "Wave: \t\t\t" + this.getWave() + "\n" +
-               "\tTotal Health: \t" + waveHealth + "\n" +
-               "\tTotal Damage: \t" + waveDamage + "\n" +
+               "\tTotal Health: \t" + String.format("%.2f", waveHealth) + "\n" +
+               "\tTotal Damage: \t" + String.format("%.2f", waveDamage) + "\n" +
                "Enemies: \t\t" + this.getEnemies() + "\n" +
                   "\tPeasants: \t\t" + this.getPeasants() + "\n" +
                   "\tBandits: \t\t" + this.getBandits() + "\n" +
