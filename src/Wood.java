@@ -2,13 +2,13 @@
 public class Wood extends Thatch {
     // class constructor - default
     public Wood() {
-        super(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+        super();
     }
 
     // class constructor - alternate
     public Wood(int cost, double health, double damage, double defense, double armor, double range, double fireRate,
                 int flammability) {
-        super(cost, health, damage, defense, armor, range, fireRate, flammability); // uses the super constructor
+        super(); // uses the super constructor
     }
 
     // splinter method makes attacks more piercing

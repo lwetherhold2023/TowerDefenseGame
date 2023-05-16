@@ -1,5 +1,16 @@
+import java.util.Random;
+
 public class Tower {
+    // set up random number generator
+    Random random = new Random();
+
     // set up variables
+    protected double randomMultiplier; // double that acts as a multiplier for randomization
+    protected double maxDbl; // the max a random double can be
+    protected double minDbl; // the min a random double can be
+    protected int randomInt; // int that acts as a multiplier for randomization
+    protected int max; // the max a random int can be
+    protected int min; // the min a random int can be
     protected int cost;
     protected double health;
     protected double damage;
@@ -106,11 +117,11 @@ public class Tower {
 
     // toString method
     public String toString() {
-        return "Health: \t\t\t" + this.getHealth() + "\n" +
-               "Damage: \t\t\t" + this.getDamage() + "\n" +
-               "Defense: \t\t\t" + this.getDefense() + "\n" +
-               "Armor: \t\t\t" + this.getArmor() + "\n" +
-               "Range: \t\t\t" + this.getRange() + "\n" +
-               "Fire Rate: \t\t\t" + this.getFireRate() + "\n";
+        return "Health: \t\t\t\t" + this.getHealth() + "\n" +
+               "Damage: \t\t\t\t" + this.getDamage() + "\n" +
+               "Defense: \t\t\t\t" + this.getDefense() + "\n" +
+               "Armor: \t\t\t\t\t" + this.getArmor() + "\n" +
+               "Range: \t\t\t\t\t" + this.getRange() + "\n" +
+               "Fire Rate: \t\t\t\t" + this.getFireRate() + "\n";
     }
 }
