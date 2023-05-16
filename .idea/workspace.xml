@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7416a926-c7cc-4b10-9c79-3e8e2bc8550c" name="Changes" comment="Development: Day 10 (finalized Archer class, Bandit class, Cavalier class, Knight Class, Monk class, Peasant class, and Priest class; modified Main class and Wave class)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Thatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wood.java" afterDir="false" />
-    </list>
+    <list default="true" id="7416a926-c7cc-4b10-9c79-3e8e2bc8550c" name="Changes" comment="Development: Day 11 (modified Stone class, Thatch class, and Wood class; developed Main class and Tower class)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683908722770</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Development: Day 11 (modified Stone class, Thatch class, and Wood class; developed Main class and Tower class)">
+      <created>1684271910024</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684271910024</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +138,7 @@
     <MESSAGE value="Development: Day 8 (modified most Classes; developed Alchemist class, Enemy class, and Wave class)" />
     <MESSAGE value="Development: Day 9 (modified most Classes; developed some Classes)" />
     <MESSAGE value="Development: Day 10 (finalized Archer class, Bandit class, Cavalier class, Knight Class, Monk class, Peasant class, and Priest class; modified Main class and Wave class)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Development: Day 10 (finalized Archer class, Bandit class, Cavalier class, Knight Class, Monk class, Peasant class, and Priest class; modified Main class and Wave class)" />
+    <MESSAGE value="Development: Day 11 (modified Stone class, Thatch class, and Wood class; developed Main class and Tower class)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Development: Day 11 (modified Stone class, Thatch class, and Wood class; developed Main class and Tower class)" />
   </component>
 </project>
