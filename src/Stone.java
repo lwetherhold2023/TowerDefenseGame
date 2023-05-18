@@ -2,17 +2,27 @@
 public class Stone extends Thatch {
     // class constructor - default
     public Stone() {
-        super();
-    }
-
-    // class constructor - alternate
-    public Stone(int cost, double health, double damage, double defense, double armor, double range, double fireRate,
-                 int flammability) {
         super(); // uses the super constructor
+        setCost(5000);
+        setHealth(125);
+        setDamage(150);
+        setDefense(7);
+        setArmor(6);
+        setRange(4);
+        setFireRate(13);
+        setFlammability(5);
     }
 
     // bonebreak method causes enemies to take increased damage and slow down
     public void bonebreak() {
+        max = 20;
+        min = 10;
+        randomInt = random.nextInt(max - min + 1) + min;
+        super.damage += randomInt;
+        max = 8;
+        min = 5;
+        randomInt = random.nextInt(max - min + 1) + min;
+        super.fireRate += randomInt;
     }
 
     // toString method

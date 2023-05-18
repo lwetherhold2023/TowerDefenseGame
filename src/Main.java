@@ -53,13 +53,25 @@ public class Main {
 
 
         System.out.print("\tHow many Thatch towers would you like to buy? ");
-        numInput = scan.nextInt();
+        try {
+            numInput = Integer.parseInt(scan.next());
+        } catch (Exception e) {
+            System.out.println("\t\tNumber input not detected. Value will default to 0.");
+            numInput = 0;
+        }
         while (cash - (1000 * numInput) < 0) {
             System.out.println("\t\tNot enough cash. Try again.");
             System.out.print("\tHow many Thatch towers would you like to buy? ");
-            numInput = scan.nextInt();
+            try {
+                numInput = Integer.parseInt(scan.next());
+            } catch (Exception e) {
+                System.out.println("\t\tNumber input not detected. Value will default to 0.");
+                numInput = 0;
+            }
         }
-        System.out.print("\n\n");
+        if (numInput > 0) {
+            System.out.print("\n\n");
+        }
         for (int i = 0; i < numInput; i++) {
             Tower thatch = new Thatch();
             ((Thatch)thatch).sleep();
@@ -71,32 +83,149 @@ public class Main {
             cash -= thatch.getCost();
             towers++;
         }
-
-
-
         System.out.print("\tHow many Wood towers would you like to buy? ");
-        numInput = scan.nextInt();
+        try {
+            numInput = Integer.parseInt(scan.next());
+        } catch (Exception e) {
+            System.out.println("\t\tNumber input not detected. Value will default to 0.");
+            numInput = 0;
+        }
+        while (cash - (2500 * numInput) < 0) {
+            System.out.println("\t\tNot enough cash. Try again.");
+            System.out.print("\tHow many Wood towers would you like to buy? ");
+            try {
+                numInput = Integer.parseInt(scan.next());
+            } catch (Exception e) {
+                System.out.println("\t\tNumber input not detected. Value will default to 0.");
+                numInput = 0;
+            }
+        }
+        if (numInput > 0) {
+            System.out.print("\n\n");
+        }
+        for (int i = 0; i < numInput; i++) {
+            Tower wood = new Wood();
+            ((Wood)wood).splinter();
+            woodTowers.add((Wood)wood);
+            System.out.print(wood);
+            System.out.print("\n\n");
+            towerHealth += wood.getHealth();
+            towerDamage += wood.getDamage();
+            cash -= wood.getCost();
+            towers++;
+        }
         System.out.print("\tHow many Stone towers would you like to buy? ");
-        numInput = scan.nextInt();
+        try {
+            numInput = Integer.parseInt(scan.next());
+        } catch (Exception e) {
+            System.out.println("\t\tNumber input not detected. Value will default to 0.");
+            numInput = 0;
+        }
+        while (cash - (5000 * numInput) < 0) {
+            System.out.println("\t\tNot enough cash. Try again.");
+            System.out.print("\tHow many Stone towers would you like to buy? ");
+            try {
+                numInput = Integer.parseInt(scan.next());
+            } catch (Exception e) {
+                System.out.println("\t\tNumber input not detected. Value will default to 0.");
+                numInput = 0;
+            }
+        }
+        if (numInput > 0) {
+            System.out.print("\n\n");
+        }
+        for (int i = 0; i < numInput; i++) {
+            Tower stone = new Stone();
+            ((Stone)stone).bonebreak();
+            stoneTowers.add((Stone)stone);
+            System.out.print(stone);
+            System.out.print("\n\n");
+            towerHealth += stone.getHealth();
+            towerDamage += stone.getDamage();
+            cash -= stone.getCost();
+            towers++;
+        }
         System.out.print("\tHow many Metal towers would you like to buy? ");
-        numInput = scan.nextInt();
+        try {
+            numInput = Integer.parseInt(scan.next());
+        } catch (Exception e) {
+            System.out.println("\t\tNumber input not detected. Value will default to 0.");
+            numInput = 0;
+        }
+        while (cash - (10000 * numInput) < 0) {
+            System.out.println("\t\tNot enough cash. Try again.");
+            System.out.print("\tHow many Metal towers would you like to buy? ");
+            try {
+                numInput = Integer.parseInt(scan.next());
+            } catch (Exception e) {
+                System.out.println("\t\tNumber input not detected. Value will default to 0.");
+                numInput = 0;
+            }
+        }
+        if (numInput > 0) {
+            System.out.print("\n\n");
+        }
+        for (int i = 0; i < numInput; i++) {
+            Tower metal = new Metal();
+            ((Metal)metal).bonebreak();
+            ((Metal)metal).passiveDamage();
+            metalTowers.add((Metal)metal);
+            System.out.print(metal);
+            System.out.print("\n\n");
+            towerHealth += metal.getHealth();
+            towerDamage += metal.getDamage();
+            cash -= metal.getCost();
+            towers++;
+        }
         System.out.print("\tHow many Diamond towers would you like to buy? ");
-        numInput = scan.nextInt();
+        try {
+            numInput = Integer.parseInt(scan.next());
+        } catch (Exception e) {
+            System.out.println("\t\tNumber input not detected. Value will default to 0.");
+            numInput = 0;
+        }
+        while (cash - (50000 * numInput) < 0) {
+            System.out.println("\t\tNot enough cash. Try again.");
+            System.out.print("\tHow many Diamond towers would you like to buy? ");
+            try {
+                numInput = Integer.parseInt(scan.next());
+            } catch (Exception e) {
+                System.out.println("\t\tNumber input not detected. Value will default to 0.");
+                numInput = 0;
+            }
+        }
+        if (numInput > 0) {
+            System.out.print("\n\n");
+        }
+        for (int i = 0; i < numInput; i++) {
+            Tower diamond = new Diamond();
+            ((Diamond)diamond).bonebreak();
+            ((Diamond)diamond).passiveDamage();
+            ((Diamond)diamond).knockback();
+            diamondTowers.add((Diamond)diamond);
+            System.out.print(diamond);
+            System.out.print("\n\n");
+            towerHealth += diamond.getHealth();
+            towerDamage += diamond.getDamage();
+            cash -= diamond.getCost();
+            towers++;
+        }
         Thread.sleep(1250);
         System.out.print("\n\n");
 
 
         String output = "Lives: \t\t\t" + lives + "\n" +
+                        "\tYour Health: \t" + String.format("%.2f", towerHealth) + "\n" +
+                        "\tYour Damage: \t" + String.format("%.2f", towerDamage) + "\n" +
                         "Cash: \t\t\t" + cash + "\n" +
-                        "Total Health: \t" + String.format("%.2f", towerHealth) + "\n" +
-                        "Total Damage: \t" + String.format("%.2f", towerDamage) + "\n" +
                         "Towers: \t\t" + towers + "\n" +
-                           "\t\tThatch: \t" + thatchTowers.size() + "\n" +
-                           "\t\tWood: \t\t" + woodTowers.size() + "\n" +
-                           "\t\tStone: \t\t" + stoneTowers.size() + "\n" +
-                           "\t\tMetal: \t\t" + metalTowers.size() + "\n" +
-                           "\t\tDiamond: \t" + diamondTowers.size() + "\n";
+                           "\tThatch: \t\t" + thatchTowers.size() + "\n" +
+                           "\tWood: \t\t\t" + woodTowers.size() + "\n" +
+                           "\tStone: \t\t\t" + stoneTowers.size() + "\n" +
+                           "\tMetal: \t\t\t" + metalTowers.size() + "\n" +
+                           "\tDiamond: \t\t" + diamondTowers.size() + "\n";
         System.out.println(output);
+        Thread.sleep(1250);
 
 
         System.out.println("\nThe game will begin with the first wave, Wave 0.");

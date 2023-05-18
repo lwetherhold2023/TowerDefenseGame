@@ -2,17 +2,31 @@
 public class Metal extends Stone {
     // class constructor - default
     public Metal() {
-        super(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
-    }
-
-    // class constructor - alternate
-    public Metal(int cost, double health, double damage, double defense, double armor, double range, double fireRate,
-                 int flammability) {
-        super(cost, health, damage, defense, armor, range, fireRate, flammability); // uses the super constructor
+        super(); // uses the super constructor
+        setCost(10000);
+        setHealth(250);
+        setDamage(380);
+        setDefense(8);
+        setArmor(8);
+        setRange(3);
+        setFireRate(10);
+        setFlammability(1);
     }
 
     // passiveDamage method causes additional damage quickly
     public void passiveDamage() {
+        max = 75;
+        min = 25;
+        randomInt = random.nextInt(max - min + 1) + min;
+        super.damage += randomInt;
+        max = 70;
+        min = 25;
+        randomInt = random.nextInt(max - min + 1) + min;
+        super.range += randomInt;
+        max = 55;
+        min = 5;
+        randomInt = random.nextInt(max - min + 1) + min;
+        super.fireRate += randomInt;
     }
 
     // toString method
