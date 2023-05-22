@@ -4,8 +4,8 @@ public class Diamond extends Metal {
     public Diamond() {
         super(); // uses the super constructor
         setCost(50000);
-        setHealth(550);
-        setDamage(850);
+        setHealth(671); //550
+        setDamage(895); //850
         setDefense(10);
         setArmor(10);
         setRange(6);

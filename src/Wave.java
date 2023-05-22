@@ -40,7 +40,7 @@ public class Wave {
         return this.wave;
     }
 
-    // set enemies (RANDOM NUMBER FOR EACH ENEMY TYPE BASED ON WAVE # AND LEVELED BY INHERITANCE STRUCTURE IN DIFFICULTY
+    // set enemies (RANDOM NUMBER FOR EACH ENEMY TYPE BASED ON WAVE # AND LEVELED BY INHERITANCE STRUCTURE IN DIFFICULTY)
     public void setEnemies() {
         if (wave < 1) {
             max = 5;
@@ -130,6 +130,11 @@ public class Wave {
             waveDamage += peasant.getDamage();
             System.out.print(peasant);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -148,6 +153,11 @@ public class Wave {
             waveDamage += bandit.getDamage();
             System.out.print(bandit);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -166,6 +176,11 @@ public class Wave {
             waveDamage += knight.getDamage();
             System.out.print(knight);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -184,6 +199,11 @@ public class Wave {
             waveDamage += archer.getDamage();
             System.out.print(archer);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -202,6 +222,11 @@ public class Wave {
             waveDamage += cavalier.getDamage();
             System.out.print(cavalier);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -220,6 +245,11 @@ public class Wave {
             waveDamage += alchemist.getDamage();
             System.out.print(alchemist);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -239,6 +269,11 @@ public class Wave {
             waveDamage += monk.getDamage();
             System.out.print(monk);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -258,6 +293,11 @@ public class Wave {
             waveDamage += priest.getDamage();
             System.out.print(priest);
             System.out.print("\n\n");
+            try {
+                Thread.sleep(250);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -268,6 +308,8 @@ public class Wave {
 
     // according to number of each enemy type, enemies are created
     public void create() {
+        this.waveHealth = 0;
+        this.waveDamage = 0;
         setPeasants(peasants);
         setBandits(bandits);
         setKnights(knights);
@@ -280,6 +322,7 @@ public class Wave {
 
     // attack method represents an enemy wave attacking the towers (total attack pool and modified health pool)
     public void attack() {
+        // unused, alternate plan taken
     }
 
     // toString method

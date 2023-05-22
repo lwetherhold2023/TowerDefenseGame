@@ -11,6 +11,7 @@ public class Main {
         Random random = new Random();
 
         // set up ArrayLists
+        // stores purchased towers
         ArrayList<Thatch> thatchTowers = new ArrayList<Thatch>();
         ArrayList<Wood> woodTowers = new ArrayList<Wood>();
         ArrayList<Stone> stoneTowers = new ArrayList<Stone>();
@@ -46,9 +47,9 @@ public class Main {
 
         System.out.println("\nHere are the costs of the tower types:");
         Thread.sleep(1000);
-        System.out.println("\tThatch: \t1000");
+        System.out.println("\tThatch: \t500");
         Thread.sleep(250);
-        System.out.println("\tWood: \t\t2500");
+        System.out.println("\tWood: \t\t2000");
         Thread.sleep(250);
         System.out.println("\tStone: \t\t5000");
         Thread.sleep(250);
@@ -64,15 +65,18 @@ public class Main {
 
 
         System.out.print("\tHow many Thatch towers would you like to buy? ");
+        // only accepts numeric input
         try {
             numInput = Integer.parseInt(scan.next());
         } catch (Exception e) {
             System.out.println("\t\tNumber input not detected. Value will default to 0.");
             numInput = 0;
         }
-        while (cash - (1000 * numInput) < 0) {
+        // ensures player can afford purchase
+        while (cash - (500 * numInput) < 0) {
             System.out.println("\t\tNot enough cash. Try again.");
             System.out.print("\tHow many Thatch towers would you like to buy? ");
+            // only accepts numeric input
             try {
                 numInput = Integer.parseInt(scan.next());
             } catch (Exception e) {
@@ -80,9 +84,11 @@ public class Main {
                 numInput = 0;
             }
         }
+        // formatting purchase questions
         if (numInput > 0) {
             System.out.print("\n\n");
         }
+        // creates purchased amount of Thatch towers
         for (int i = 0; i < numInput; i++) {
             Tower thatch = new Thatch();
             ((Thatch)thatch).sleep();
@@ -93,17 +99,21 @@ public class Main {
             towerDamage += thatch.getDamage();
             cash -= thatch.getCost();
             towers++;
+            Thread.sleep(250);
         }
         System.out.print("\tHow many Wood towers would you like to buy? ");
+        // only accepts numeric input
         try {
             numInput = Integer.parseInt(scan.next());
         } catch (Exception e) {
             System.out.println("\t\tNumber input not detected. Value will default to 0.");
             numInput = 0;
         }
-        while (cash - (2500 * numInput) < 0) {
+        // ensures player can afford purchase
+        while (cash - (2000 * numInput) < 0) {
             System.out.println("\t\tNot enough cash. Try again.");
             System.out.print("\tHow many Wood towers would you like to buy? ");
+            // only accepts numeric input
             try {
                 numInput = Integer.parseInt(scan.next());
             } catch (Exception e) {
@@ -111,9 +121,11 @@ public class Main {
                 numInput = 0;
             }
         }
+        // formatting purchase questions
         if (numInput > 0) {
             System.out.print("\n\n");
         }
+        // creates purchased amount of Wood towers
         for (int i = 0; i < numInput; i++) {
             Tower wood = new Wood();
             ((Wood)wood).splinter();
@@ -124,17 +136,21 @@ public class Main {
             towerDamage += wood.getDamage();
             cash -= wood.getCost();
             towers++;
+            Thread.sleep(250);
         }
         System.out.print("\tHow many Stone towers would you like to buy? ");
+        // only accepts numeric input
         try {
             numInput = Integer.parseInt(scan.next());
         } catch (Exception e) {
             System.out.println("\t\tNumber input not detected. Value will default to 0.");
             numInput = 0;
         }
+        // ensures player can afford purchase
         while (cash - (5000 * numInput) < 0) {
             System.out.println("\t\tNot enough cash. Try again.");
             System.out.print("\tHow many Stone towers would you like to buy? ");
+            // only accepts numeric input
             try {
                 numInput = Integer.parseInt(scan.next());
             } catch (Exception e) {
@@ -142,9 +158,11 @@ public class Main {
                 numInput = 0;
             }
         }
+        // formatting purchase questions
         if (numInput > 0) {
             System.out.print("\n\n");
         }
+        // creates purchased amount of Stone towers
         for (int i = 0; i < numInput; i++) {
             Tower stone = new Stone();
             ((Stone)stone).bonebreak();
@@ -155,17 +173,21 @@ public class Main {
             towerDamage += stone.getDamage();
             cash -= stone.getCost();
             towers++;
+            Thread.sleep(250);
         }
         System.out.print("\tHow many Metal towers would you like to buy? ");
+        // only accepts numeric input
         try {
             numInput = Integer.parseInt(scan.next());
         } catch (Exception e) {
             System.out.println("\t\tNumber input not detected. Value will default to 0.");
             numInput = 0;
         }
+        // ensures player can afford purchase
         while (cash - (10000 * numInput) < 0) {
             System.out.println("\t\tNot enough cash. Try again.");
             System.out.print("\tHow many Metal towers would you like to buy? ");
+            // only accepts numeric input
             try {
                 numInput = Integer.parseInt(scan.next());
             } catch (Exception e) {
@@ -173,9 +195,11 @@ public class Main {
                 numInput = 0;
             }
         }
+        // formatting purchase questions
         if (numInput > 0) {
             System.out.print("\n\n");
         }
+        // creates purchased amount of Metal towers
         for (int i = 0; i < numInput; i++) {
             Tower metal = new Metal();
             ((Metal)metal).bonebreak();
@@ -187,17 +211,21 @@ public class Main {
             towerDamage += metal.getDamage();
             cash -= metal.getCost();
             towers++;
+            Thread.sleep(250);
         }
         System.out.print("\tHow many Diamond towers would you like to buy? ");
+        // only accepts numeric input
         try {
             numInput = Integer.parseInt(scan.next());
         } catch (Exception e) {
             System.out.println("\t\tNumber input not detected. Value will default to 0.");
             numInput = 0;
         }
+        // ensures player can afford purchase
         while (cash - (50000 * numInput) < 0) {
             System.out.println("\t\tNot enough cash. Try again.");
             System.out.print("\tHow many Diamond towers would you like to buy? ");
+            // only accepts numeric input
             try {
                 numInput = Integer.parseInt(scan.next());
             } catch (Exception e) {
@@ -205,9 +233,11 @@ public class Main {
                 numInput = 0;
             }
         }
+        // formatting purchase questions
         if (numInput > 0) {
             System.out.print("\n\n");
         }
+        // creates purchased amount of Diamond towers
         for (int i = 0; i < numInput; i++) {
             Tower diamond = new Diamond();
             ((Diamond)diamond).bonebreak();
@@ -220,8 +250,9 @@ public class Main {
             towerDamage += diamond.getDamage();
             cash -= diamond.getCost();
             towers++;
+            Thread.sleep(250);
         }
-        Thread.sleep(1250);
+        Thread.sleep(5000);
         System.out.print("\n\n");
 
 
@@ -236,7 +267,7 @@ public class Main {
                     "\tMetal: \t\t\t" + metalTowers.size() + "\n" +
                     "\tDiamond: \t\t" + diamondTowers.size() + "\n";
         System.out.println(output);
-        Thread.sleep(1250);
+        Thread.sleep(2500);
 
 
         System.out.println("\nThe game will begin with the first wave, Wave 0.");
@@ -245,6 +276,7 @@ public class Main {
         Thread.sleep(5000);
 
 
+        // initializes the enemy wave
         Wave wave = new Wave(0);
         wave.setEnemies();
         wave.create();
@@ -258,12 +290,14 @@ public class Main {
             // ask for input of action
             System.out.print("\nWould you like to fight \"f\" or purchase \"p\" more towers? Enter \"stop\" at any time to quit. ");
             actionInput = scan.next();
+            Thread.sleep(1250);
 
             switch(actionInput) {
                 case "f":
                     double towerSum = towerHealth + towerDamage;
                     double waveSum = waveHealth + waveDamage;
                     System.out.println("\n");
+                    // compares tower and wave health, determines if tower is stronger or not
                     if (towerHealth > waveHealth) {
                         System.out.println("Your towers have more Health than Wave " + waveNum + ".");
                     } else if (towerHealth < waveHealth) {
@@ -271,7 +305,9 @@ public class Main {
                     } else {
                         System.out.println("Your towers and Wave " + waveNum + " have equal Health.");
                     }
+                    Thread.sleep(1250);
 
+                    // compares tower and wave damage, determines if tower is stronger or not
                     if (towerDamage > waveDamage) {
                         System.out.println("Your towers have more Damage than Wave " + waveNum + ".");
                     } else if (towerHealth < waveHealth) {
@@ -279,20 +315,28 @@ public class Main {
                     } else {
                         System.out.println("Your towers and Wave " + waveNum + " have equal Damage.");
                     }
+                    Thread.sleep(1250);
 
+                    // compares the sums of tower and wave stats
                     if (towerSum > waveSum) {
                         // tower has more total stats, CONTINUE AND GAIN CASH
-                        max = 7500;
+                        max = 17500;
                         min = 1000;
                         randomInt = random.nextInt(max - min + 1) + min;
 
                         System.out.println("\nYou have defeated Wave " + waveNum + " and earned " + randomInt + " cash.");
                         cash += randomInt;
+                        Thread.sleep(1250);
                         System.out.println("You have " + cash + " cash.");
+                        Thread.sleep(1250);
 
                         System.out.println("\nThe game will continue with the next wave, Wave " + (waveNum + 1) + ".");
+                        Thread.sleep(1250);
                         System.out.println("\nInformation will be listed below.\n");
+                        Thread.sleep(1250);
+                        // next wave
                         waveNum++;
+                        // changes wave number
                         wave.setWave(waveNum);
                         wave.setEnemies();
                         wave.create();
@@ -303,26 +347,39 @@ public class Main {
                         // wave has more total stats, LOSE LIFE
                         // OR
                         // equal total stats, LOSE LIFE
-                        System.out.println("\nWave " + waveNum + " is stronger than or equally as strong as your towers. You have lost a life and will repeat Wave " + waveNum + ".");
                         lives--;
-                        System.out.println("\nYou have " + lives + " lives.");
+                        if (lives != 0) {
+                            System.out.println("\nWave " + waveNum + " is stronger than or equally as strong as your towers. You have lost a life and will repeat Wave " + waveNum + ".");
+                        } else {
+                            System.out.println("\nWave " + waveNum + " is stronger than or equally as strong as your towers. You have lost a life and been defeated by Wave " + waveNum + ".");
+                        }
 
-                        System.out.println("\nThe game will repeat the current wave, Wave " + waveNum + ".");
-                        System.out.println("\nInformation will be listed below.");
-                        wave.setWave(waveNum);
-                        wave.setEnemies();
-                        wave.create();
-                        waveHealth = wave.waveHealth;
-                        waveDamage = wave.waveDamage;
-                        System.out.println(wave);
+                        Thread.sleep(1250);
+                        System.out.println("\nYou have " + lives + " lives.");
+                        Thread.sleep(1250);
+
+                        // player loses but stil has lives
+                        if (lives != 0) {
+                            System.out.println("\nThe game will repeat the current wave, Wave " + waveNum + ".");
+                            Thread.sleep(1250);
+                            System.out.println("\nInformation will be listed below.\n");
+                            Thread.sleep(1250);
+                            wave.setWave(waveNum);
+                            wave.setEnemies();
+                            wave.create();
+                            waveHealth = wave.waveHealth;
+                            waveDamage = wave.waveDamage;
+                            System.out.println(wave);
+                        }
                     }
                     break;
                 case "p":
+                    // same as before, but now in a forever loop with user input
                     System.out.println("\nHere are the costs of the tower types:");
                     Thread.sleep(1000);
-                    System.out.println("\tThatch: \t1000");
+                    System.out.println("\tThatch: \t500");
                     Thread.sleep(250);
-                    System.out.println("\tWood: \t\t2500");
+                    System.out.println("\tWood: \t\t2000");
                     Thread.sleep(250);
                     System.out.println("\tStone: \t\t5000");
                     Thread.sleep(250);
@@ -344,7 +401,7 @@ public class Main {
                         System.out.println("\t\tNumber input not detected. Value will default to 0.");
                         numInput = 0;
                     }
-                    while (cash - (1000 * numInput) < 0) {
+                    while (cash - (500 * numInput) < 0) {
                         System.out.println("\t\tNot enough cash. Try again.");
                         System.out.print("\tHow many Thatch towers would you like to buy? ");
                         try {
@@ -367,6 +424,7 @@ public class Main {
                         towerDamage += thatch.getDamage();
                         cash -= thatch.getCost();
                         towers++;
+                        Thread.sleep(250);
                     }
                     System.out.print("\tHow many Wood towers would you like to buy? ");
                     try {
@@ -375,7 +433,7 @@ public class Main {
                         System.out.println("\t\tNumber input not detected. Value will default to 0.");
                         numInput = 0;
                     }
-                    while (cash - (2500 * numInput) < 0) {
+                    while (cash - (2000 * numInput) < 0) {
                         System.out.println("\t\tNot enough cash. Try again.");
                         System.out.print("\tHow many Wood towers would you like to buy? ");
                         try {
@@ -398,6 +456,7 @@ public class Main {
                         towerDamage += wood.getDamage();
                         cash -= wood.getCost();
                         towers++;
+                        Thread.sleep(250);
                     }
                     System.out.print("\tHow many Stone towers would you like to buy? ");
                     try {
@@ -429,6 +488,7 @@ public class Main {
                         towerDamage += stone.getDamage();
                         cash -= stone.getCost();
                         towers++;
+                        Thread.sleep(250);
                     }
                     System.out.print("\tHow many Metal towers would you like to buy? ");
                     try {
@@ -461,6 +521,7 @@ public class Main {
                         towerDamage += metal.getDamage();
                         cash -= metal.getCost();
                         towers++;
+                        Thread.sleep(250);
                     }
                     System.out.print("\tHow many Diamond towers would you like to buy? ");
                     try {
@@ -494,6 +555,7 @@ public class Main {
                         towerDamage += diamond.getDamage();
                         cash -= diamond.getCost();
                         towers++;
+                        Thread.sleep(250);
                     }
                     Thread.sleep(1250);
                     System.out.print("\n\n");
@@ -515,12 +577,10 @@ public class Main {
                 case "stop":
                     System.exit(0);
                     break;
-                default:
-                    // ask for input of action
-                    System.out.println("Would you like to fight \"f\" or purchase \"p\" more towers? Enter \"stop\" at any time to quit.");
-                    actionInput = scan.next();
             }
         }
+        // player loses and has run out of lives
+        // 0 LIVES LEFT
         System.out.println("\nYou have reached 0 lives.");
         Thread.sleep(1250);
         System.out.println("\nGAME OVER");

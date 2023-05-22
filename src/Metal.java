@@ -4,7 +4,7 @@ public class Metal extends Stone {
     public Metal() {
         super(); // uses the super constructor
         setCost(10000);
-        setHealth(250);
+        setHealth(420); // 250
         setDamage(380);
         setDefense(8);
         setArmor(8);

@@ -4,8 +4,8 @@ public class Stone extends Thatch {
     public Stone() {
         super(); // uses the super constructor
         setCost(5000);
-        setHealth(125);
-        setDamage(150);
+        setHealth(188); // 125
+        setDamage(172); // 150
         setDefense(7);
         setArmor(6);
         setRange(4);

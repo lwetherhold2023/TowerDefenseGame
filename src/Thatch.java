@@ -7,9 +7,9 @@ public class Thatch extends Tower {
     public Thatch() {
         super(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0); // uses the super constructor
         this.flammability = 0; // also include the extra variable in the Thatch constructor
-        setCost(1000);
-        setHealth(10);
-        setDamage(8);
+        setCost(500);
+        setHealth(12); // 10
+        setDamage(10); // 8
         setDefense(3);
         setArmor(2);
         setRange(4);

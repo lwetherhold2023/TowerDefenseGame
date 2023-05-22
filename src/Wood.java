@@ -3,9 +3,9 @@ public class Wood extends Thatch {
     // class constructor - default
     public Wood() {
         super(); // uses the super constructor
-        setCost(2500);
-        setHealth(55);
-        setDamage(62);
+        setCost(2000);
+        setHealth(65); // 55
+        setDamage(72); // 62
         setDefense(4);
         setArmor(3);
         setRange(2);
